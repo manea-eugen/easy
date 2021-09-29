@@ -12,9 +12,7 @@ describe('Entity', () => {
     static readonly Jeroen = new DevOps({ id: 1, name: 'Jeroen', level: 5, platform: 'GCP' });
     readonly platform = this.state.platform;
 
-    update<DevOps>(_add: Json): DevOps {
-      return new (this.constructor as Constructor<DevOps>)(this.merge(_add));
-    }
+    update = (_add: Json) => new (this.constructor as Constructor<this>)(this.merge(_add));
   }
 
   test('isValid passes', () => {

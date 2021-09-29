@@ -16,4 +16,5 @@ export abstract class Entity extends Struct {
       created: this.created.toJSON(),
       lastModified: new Audit().toJSON(),
     });
-}
+
+ }
